@@ -39,6 +39,31 @@ jobs:
     - name: Test
       run: poetry run python3 -m unittest discover
 
+  TestPyPIPublish:
+    needs: Quality
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
+
+      - name: Install Poetry
+        uses: abatilo/actions-poetry@v2.3.0
+
+      - name: Publish to TestPyPI
+        env:
+          TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
+        run: |
+          poetry config repositories.test-pypi https://test.pypi.org/legacy/
+          poetry config pypi-token.test-pypi $TEST_PYPI_TOKEN
+          poetry publish -r test-pypi -u __token__
+
   Release:
     needs: Quality
     if: |
@@ -73,28 +98,6 @@ jobs:
           else
             echo "Skipping release steps."
           fi
-
-      - if: steps.release-status.outputs.released == 'true'
-        name: Release to GitHub
-        id: github-release
-        env:
-          GH_TOKEN: ${{ secrets.KGFORGE_GIT_TOKEN }}
-        run: |
-          semantic-release version
-          git fetch --tags
-          for file in ./dist/**
-            do gh release upload "${{steps.release-status.outputs.tag}}" $file
-          done
-
-      - if: steps.release-status.outputs.released == 'true'
-        name: Release to Test PyPI
-        id: test-pypi-release
-        env:
-          TEST_PYPI_TOKEN: ${{ secrets.TEST_PYPI_TOKEN }}
-        run: |
-          poetry config repositories.test-pypi https://test.pypi.org/legacy/
-          poetry config pypi-token.test-pypi $TEST_PYPI_TOKEN
-          poetry publish -r test-pypi -u __token__
 
       - if: steps.release-status.outputs.released == 'true'
         name: Release to PyPI
