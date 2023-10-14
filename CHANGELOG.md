@@ -2,6 +2,19 @@
 
 
 
+## v0.2.2 (2023-10-14)
+
+### Fix
+
+* fix: checking badge for readme ([`1d18f6e`](https://github.com/harishsiravuri/kgforge/commit/1d18f6eece8034cbe33786c8cf7843e57c4196fc))
+
+### Unknown
+
+* Merge pull request #1 from harishsiravuri/harish/update-readme
+
+fix: checking badge for readme ([`ff1e026`](https://github.com/harishsiravuri/kgforge/commit/ff1e0262da6c6f718c3e5895eee48467877bb883))
+
+
 ## v0.2.1 (2023-10-14)
 
 ### Fix
