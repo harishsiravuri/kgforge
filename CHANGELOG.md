@@ -2,6 +2,23 @@
 
 
 
+## v0.1.0 (2023-10-13)
+
+### Unknown
+
+* feature ([`9d027ee`](https://github.com/harishsiravuri/kgforge/commit/9d027ee0e7f90414cc5f4b25cfd1edd4bbcec92d))
+
+* feature ([`8a86c93`](https://github.com/harishsiravuri/kgforge/commit/8a86c93c483ff700ccac0f09906f0310a49e1f4c))
+
+* feature ([`8ab021b`](https://github.com/harishsiravuri/kgforge/commit/8ab021b831b96662453c39178ae94ebb83873bf8))
+
+* feature ([`383bcf6`](https://github.com/harishsiravuri/kgforge/commit/383bcf670851956ade1797ee651b9f7ddb5a86e5))
+
+* Merge branch &#39;main&#39; of https://github.com/harishsiravuri/kgforge ([`3c1caa0`](https://github.com/harishsiravuri/kgforge/commit/3c1caa0b909819c68b27af2d2b11892aee522fbd))
+
+* feature ([`d51f45b`](https://github.com/harishsiravuri/kgforge/commit/d51f45bde1221eee3844aef30a24c31795c2e1a5))
+
+
 ## v0.0.0 (2023-10-13)
 
 ### Unknown
