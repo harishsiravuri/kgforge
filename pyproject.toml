@@ -12,6 +12,11 @@ torch = ">=2.0.0, !=2.0.1, !=2.1.0"
 transformers = "^4.34.0"
 pytest = "^7.4.2"
 
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
+
 
 [build-system]
 requires = ["poetry-core"]
