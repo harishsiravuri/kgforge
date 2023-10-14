@@ -70,7 +70,7 @@ jobs:
           GH_TOKEN: ${{ secrets.KGFORGE_GIT_TOKEN }}
         run: |
           pip install python-semantic-release
-          if semantic-release --noop --strict version
+          if semantic-release --strict version
           then
             echo "Releasing new version."
           else
