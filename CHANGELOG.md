@@ -2,7 +2,18 @@
 
 
 
-## v0.2.0 (2023-10-13)
+## v0.2.1 (2023-10-14)
+
+### Fix
+
+* fix: disabled noop mode ([`9556048`](https://github.com/harishsiravuri/kgforge/commit/95560486c76dfa00f061f07dd63ca98032fba307))
+
+* fix: install poetry before attempting release ([`f6bbd9d`](https://github.com/harishsiravuri/kgforge/commit/f6bbd9d26add053701379fe0e01adf1e70a15dd4))
+
+* fix: testing semver ([`0d8b62b`](https://github.com/harishsiravuri/kgforge/commit/0d8b62b87e0021d8d1ac1395081c0a22c6f195be))
+
+
+## v0.2.0 (2023-10-14)
 
 
 ## v0.1.0 (2023-10-14)
