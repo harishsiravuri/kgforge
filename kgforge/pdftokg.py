@@ -15,6 +15,7 @@ class PdfToKg:
     )
 
     def answer_question(self, question: str, context: str) -> str:
+        # test patch
         input_ids = self.tokenizer.encode(
             question, context, truncation=True, max_length=512
         )
