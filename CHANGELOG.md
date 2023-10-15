@@ -2,6 +2,21 @@
 
 
 
+## v0.2.4 (2023-10-15)
+
+### Fix
+
+* fix: rename docs ([`246e0a7`](https://github.com/harishsiravuri/kgforge/commit/246e0a75ddfd8c740183d356abe9970987f2e179))
+
+### Unknown
+
+* Merge pull request #5 from harishsiravuri/harish/pat
+
+fix: rename docs ([`d2e91a6`](https://github.com/harishsiravuri/kgforge/commit/d2e91a62e0f77569692663cf6e5c824d2d5a448c))
+
+* Merge branch &#39;main&#39; into harish/pat ([`726e3a8`](https://github.com/harishsiravuri/kgforge/commit/726e3a8ce524fd03569050c0bd8cec4e7405933b))
+
+
 ## v0.2.3 (2023-10-15)
 
 ### Fix
