@@ -2,6 +2,23 @@
 
 
 
+## v0.2.5 (2023-10-15)
+
+### Fix
+
+* fix: docs ([`a9fa5d0`](https://github.com/harishsiravuri/kgforge/commit/a9fa5d0413180366d0494b95b058121998a43fcd))
+
+### Unknown
+
+* Merge pull request #6 from harishsiravuri/harish/pat
+
+Harish/pat ([`a6d1ddb`](https://github.com/harishsiravuri/kgforge/commit/a6d1ddb4971dbc803496f7a48149e47b942a6dfc))
+
+* Merge branch &#39;main&#39; into harish/pat ([`c23f5ef`](https://github.com/harishsiravuri/kgforge/commit/c23f5ef23c15eb2c94eb265c4d505308f033fb4a))
+
+* Merge branch &#39;harish/pat&#39; of https://github.com/harishsiravuri/kgforge into harish/pat ([`60450ff`](https://github.com/harishsiravuri/kgforge/commit/60450ffac010b53001906b438533022a0e6e87c8))
+
+
 ## v0.2.4 (2023-10-15)
 
 ### Fix
