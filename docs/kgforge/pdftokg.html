@@ -43,6 +43,21 @@ class PdfToKg:
     )
 
     def answer_question(self, question: str, context: str) -&gt; str:
+        &#34;&#34;&#34;Answers questions based on context.
+
+        Usage example:
+        ans = PdfToKg().answer_question(&#34;text&#34;, &#34;context&#34;)
+
+        Args:
+            question (str): Question to be answered.
+            context (str): Context to be used for answering the question.
+
+        Returns:
+            str: Answer to the question.
+
+        Raises:
+            None
+        &#34;&#34;&#34;
         input_ids = self.tokenizer.encode(
             question, context, truncation=True, max_length=512
         )
@@ -100,6 +115,21 @@ TODO: Remove this when not needed anymore</p></div>
     )
 
     def answer_question(self, question: str, context: str) -&gt; str:
+        &#34;&#34;&#34;Answers questions based on context.
+
+        Usage example:
+        ans = PdfToKg().answer_question(&#34;text&#34;, &#34;context&#34;)
+
+        Args:
+            question (str): Question to be answered.
+            context (str): Context to be used for answering the question.
+
+        Returns:
+            str: Answer to the question.
+
+        Raises:
+            None
+        &#34;&#34;&#34;
         input_ids = self.tokenizer.encode(
             question, context, truncation=True, max_length=512
         )
@@ -140,12 +170,43 @@ TODO: Remove this when not needed anymore</p></div>
 <span>def <span class="ident">answer_question</span></span>(<span>self, question: str, context: str) ‑> str</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>Answers questions based on context.</p>
+<p>Usage example:
+ans = PdfToKg().answer_question("text", "context")</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>question</code></strong> :&ensp;<code>str</code></dt>
+<dd>Question to be answered.</dd>
+<dt><strong><code>context</code></strong> :&ensp;<code>str</code></dt>
+<dd>Context to be used for answering the question.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>str</code></dt>
+<dd>Answer to the question.</dd>
+</dl>
+<h2 id="raises">Raises</h2>
+<p>None</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def answer_question(self, question: str, context: str) -&gt; str:
+    &#34;&#34;&#34;Answers questions based on context.
+
+    Usage example:
+    ans = PdfToKg().answer_question(&#34;text&#34;, &#34;context&#34;)
+
+    Args:
+        question (str): Question to be answered.
+        context (str): Context to be used for answering the question.
+
+    Returns:
+        str: Answer to the question.
+
+    Raises:
+        None
+    &#34;&#34;&#34;
     input_ids = self.tokenizer.encode(
         question, context, truncation=True, max_length=512
     )
