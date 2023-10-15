@@ -15,6 +15,21 @@ class PdfToKg:
     )
 
     def answer_question(self, question: str, context: str) -> str:
+        """Answers questions based on context.
+
+        Usage example:
+        ans = PdfToKg().answer_question("text", "context")
+
+        Args:
+            question (str): Question to be answered.
+            context (str): Context to be used for answering the question.
+
+        Returns:
+            str: Answer to the question.
+
+        Raises:
+            None
+        """
         input_ids = self.tokenizer.encode(
             question, context, truncation=True, max_length=512
         )
