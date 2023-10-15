@@ -2,6 +2,37 @@
 
 
 
+## v0.2.3 (2023-10-15)
+
+### Fix
+
+* fix: docs ([`c261491`](https://github.com/harishsiravuri/kgforge/commit/c2614919f1aa2426a3d37e65912f8ea1f1758225))
+
+* fix: updated rule ([`6f05c95`](https://github.com/harishsiravuri/kgforge/commit/6f05c95f4aab52f17b077dfff59eed9f2462b48a))
+
+* fix: pat use ([`bf1bc27`](https://github.com/harishsiravuri/kgforge/commit/bf1bc279cc23114e0bfb7d6386adb26d65803e82))
+
+### Unknown
+
+* Merge pull request #4 from harishsiravuri/harish/pat
+
+Harish/pat ([`0ccc1c7`](https://github.com/harishsiravuri/kgforge/commit/0ccc1c76bb6b1c55e0981aeef736bcdc5652dc50))
+
+* Merge branch &#39;main&#39; into harish/pat ([`fad56b5`](https://github.com/harishsiravuri/kgforge/commit/fad56b5164d4efb319138a26857d6f6c0a506565))
+
+* Merge branch &#39;harish/pat&#39; of https://github.com/harishsiravuri/kgforge into harish/pat ([`ee701ab`](https://github.com/harishsiravuri/kgforge/commit/ee701ab08bc1fdc4fe2a66bad2f384b0efe7aafa))
+
+* Merge pull request #3 from harishsiravuri/harish/pat
+
+fix: updated rule ([`46f3905`](https://github.com/harishsiravuri/kgforge/commit/46f3905696836716a746d265773e0e17a2091a2d))
+
+* Merge branch &#39;main&#39; into harish/pat ([`f44c8f3`](https://github.com/harishsiravuri/kgforge/commit/f44c8f38597181abd3a1a05d9e1f631695bccd85))
+
+* Merge pull request #2 from harishsiravuri/harish/pat
+
+fix: pat use ([`1f06ed9`](https://github.com/harishsiravuri/kgforge/commit/1f06ed944e44d17aa1e46c9a1b5454c48a95a545))
+
+
 ## v0.2.2 (2023-10-14)
 
 ### Fix
