@@ -2,6 +2,25 @@
 
 
 
+## v0.2.8 (2023-10-17)
+
+### Fix
+
+* fix: more permissions ([`bad4f3f`](https://github.com/harishsiravuri/kgforge/commit/bad4f3f7f638354f455c136c0f3671a89dcaf6b9))
+
+* fix: update ci ([`a7d60b0`](https://github.com/harishsiravuri/kgforge/commit/a7d60b0132f9e48066676e10b30d5d116e410ab8))
+
+### Unknown
+
+* fix:env ([`442567a`](https://github.com/harishsiravuri/kgforge/commit/442567a812dd8bcb8c1894610fe19204daf666e8))
+
+* fix:ci ([`5df0545`](https://github.com/harishsiravuri/kgforge/commit/5df0545cdaa5459aaac552e2a03a7633570b5ded))
+
+* fix:permissions ([`7e0cc43`](https://github.com/harishsiravuri/kgforge/commit/7e0cc43a7a3cfb667ef9bd045c6587254d20578f))
+
+* merge ([`abacda0`](https://github.com/harishsiravuri/kgforge/commit/abacda03442717c372c50cb17acc6bbfb2c0ca22))
+
+
 ## v0.2.7 (2023-10-17)
 
 ### Fix
