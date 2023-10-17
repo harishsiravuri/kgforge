@@ -10,6 +10,9 @@ on:
 jobs:
   Quality:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
     strategy:
         fail-fast: true
         matrix:
