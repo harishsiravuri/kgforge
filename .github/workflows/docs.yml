@@ -18,11 +18,11 @@ jobs:
       run: pdoc --html -o docs kgforge
 
     - name: Upload documentation to GitHub Pages
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v2
       with:
         path: ./docs/kgforge
 
     - name: Deploy documentation to GitHub Pages
-      uses: actions/deploy-pages@v3
+      uses: actions/deploy-pages@v2
       with:
         github-token: ${{ secrets.GH_TOKEN }}
