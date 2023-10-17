@@ -1,0 +1,28 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install pdoc3
+      run: pip install pdoc3
+
+    - name: Generate documentation
+      run: pdoc --html -o docs kgforge
+
+    - name: Upload documentation to GitHub Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./docs/kgforge
+
+    - name: Deploy documentation to GitHub Pages
+      uses: actions/deploy-pages@v3
+      with:
+        github-token: ${{ secrets.GH_TOKEN }}
