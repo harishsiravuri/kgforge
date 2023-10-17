@@ -1,4 +1,4 @@
-name: CI/CD
+name: ContinuousDocumentation
 
 on:
   push:
@@ -13,6 +13,13 @@ jobs:
 
     - name: Install pdoc3
       run: pip install pdoc3
+
+    - name: Install Python Poetry
+      uses: abatilo/actions-poetry@v2.3.0
+
+    - name: Configure poetry
+      shell: bash
+      run: python -m poetry config virtualenvs.in-project true
 
     - name: Generate documentation
       run: pdoc --html -o docs kgforge
