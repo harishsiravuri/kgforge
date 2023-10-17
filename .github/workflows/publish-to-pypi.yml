@@ -10,21 +10,18 @@ on:
 jobs:
   Quality:
     runs-on: ubuntu-latest
+    environment: github-pages
     permissions:
       id-token: write
       contents: write
       pages: write
-    strategy:
-        fail-fast: true
-        matrix:
-          python-version: ["3.11"]
 
     steps:
     - uses: actions/checkout@v3
 
     - uses: actions/setup-python@v3
       with:
-        python-version: ${{matrix.python-version}}
+        python-version: 3.11
 
     - name: Install Python Poetry
       uses: abatilo/actions-poetry@v2.3.0
