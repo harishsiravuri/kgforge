@@ -63,7 +63,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          persist-credential: false
+          persist-credentials: false
 
       - name: Check release status
         id: release-status
@@ -77,6 +77,22 @@ jobs:
           else
             echo "Skipping release steps."
           fi
+
+      - name: Install pdoc3
+        run: pip install pdoc3
+
+      - name: Generate documentation
+        run: poetry run pdoc --html kgforge --force
+
+      - name: Upload documentation to GitHub Pages
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./html/kgforge
+
+      - name: Deploy documentation to GitHub Pages
+        uses: actions/deploy-pages@v2
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
 
       - if: steps.release-status.outputs.released == 'true'
         name: Publish to TestPyPI
