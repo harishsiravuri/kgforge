@@ -2,6 +2,17 @@
 
 
 
+## v0.2.6 (2023-10-17)
+
+### Fix
+
+* fix: docs ([`06fce23`](https://github.com/harishsiravuri/kgforge/commit/06fce2365aa3bf642e7ab0907b4c0f1fc487bf76))
+
+* fix: docs yml ([`fcb51b4`](https://github.com/harishsiravuri/kgforge/commit/fcb51b4785d0635aa60dfdac8ea3e8b82d52c4f0))
+
+* fix: docs ([`c6df040`](https://github.com/harishsiravuri/kgforge/commit/c6df040caac92a1bef23932c4272e28e839452d3))
+
+
 ## v0.2.5 (2023-10-15)
 
 ### Fix
