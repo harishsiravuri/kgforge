@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kgforge"
-version = "0.2.6"
+version = "0.2.7"
 description = "Library to automate extraction of scientific knowledge and generate knowledge graphs out of them."
 authors = ["Harish Varma Siravuri <harish.siravuri@gmail.com>"]
 license = "MIT"
