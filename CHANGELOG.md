@@ -2,6 +2,19 @@
 
 
 
+## v0.2.7 (2023-10-17)
+
+### Fix
+
+* fix: merge workflows ([`af4bad1`](https://github.com/harishsiravuri/kgforge/commit/af4bad1d7e242033c1e5a77130349110b06a4112))
+
+### Unknown
+
+* merge ([`a30dc3a`](https://github.com/harishsiravuri/kgforge/commit/a30dc3a6f4c24d3d61f698038b21a6d736e2bf30))
+
+* fix:cd ([`7f110f5`](https://github.com/harishsiravuri/kgforge/commit/7f110f5c3af6f11196a471ae60bd2bc916bf181c))
+
+
 ## v0.2.6 (2023-10-17)
 
 ### Fix
