@@ -21,8 +21,12 @@ jobs:
       shell: bash
       run: python -m poetry config virtualenvs.in-project true
 
+    - name: Install dependencies
+      run: |
+        python -m poetry install
+
     - name: Generate documentation
-      run: pdoc --html -o docs kgforge
+      run: pdoc --html -o docs kgforge --force
 
     - name: Upload documentation to GitHub Pages
       uses: actions/upload-pages-artifact@v2
