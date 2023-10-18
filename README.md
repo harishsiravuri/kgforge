@@ -1,5 +1,3 @@
-# kgforge
-
 <h1 align="center">
   <br>
   <img src="https://github.com/harishsiravuri/kgforge/blob/main/images/kgforge_logo.svg?raw=true"  width="400" height="400" alt="kgforge logo"/>
