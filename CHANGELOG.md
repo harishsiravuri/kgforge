@@ -2,6 +2,55 @@
 
 
 
+## v0.2.9 (2023-10-20)
+
+### Fix
+
+* fix: workflow ([`75aa9d5`](https://github.com/harishsiravuri/kgforge/commit/75aa9d56350c9934a7e6be5b4d36e6ff64e035d5))
+
+### Unknown
+
+* Merge pull request #11 from harishsiravuri/8-upgrade-poetry-to-161
+
+8 upgrade poetry to 161 ([`f3cac63`](https://github.com/harishsiravuri/kgforge/commit/f3cac63a31ef4210c24d838e38d086b47f02eaf6))
+
+* Merge branch &#39;main&#39; into 8-upgrade-poetry-to-161 ([`496b522`](https://github.com/harishsiravuri/kgforge/commit/496b52234533a0e3fd5017786c8950182f865b3c))
+
+* Merge branch &#39;8-upgrade-poetry-to-161&#39; of https://github.com/harishsiravuri/kgforge into 8-upgrade-poetry-to-161 ([`12bbcac`](https://github.com/harishsiravuri/kgforge/commit/12bbcacce7b16913984fefba668b04e64513f1fa))
+
+* reverting workflow since alert was due to hugging face ([`d11672a`](https://github.com/harishsiravuri/kgforge/commit/d11672ab3239dc3c64a3a6c89b2dadde94782f70))
+
+* Merge pull request #10 from harishsiravuri/8-upgrade-poetry-to-161
+
+8 upgrade poetry to 161 ([`49f7f3e`](https://github.com/harishsiravuri/kgforge/commit/49f7f3e72dfe50bbb680c828a4482efb154db41d))
+
+* Merge branch &#39;main&#39; into 8-upgrade-poetry-to-161 ([`8347190`](https://github.com/harishsiravuri/kgforge/commit/8347190250fa0b169a77336378df05f6ccf6046a))
+
+* Merge branch &#39;8-upgrade-poetry-to-161&#39; of https://github.com/harishsiravuri/kgforge into 8-upgrade-poetry-to-161 ([`f47985d`](https://github.com/harishsiravuri/kgforge/commit/f47985d4a9f066e71f8f1df7252106d4fef6e630))
+
+* Merge pull request #9 from harishsiravuri/8-upgrade-poetry-to-161
+
+update poetry action ([`73578e3`](https://github.com/harishsiravuri/kgforge/commit/73578e39ecf34a2d1e887fe67017c0de282410fd))
+
+* Merge branch &#39;main&#39; into 8-upgrade-poetry-to-161 ([`64c13ba`](https://github.com/harishsiravuri/kgforge/commit/64c13baba6453f62572d6aa647d7f3b72fa5f5c8))
+
+* update poetry action ([`1e0cb8f`](https://github.com/harishsiravuri/kgforge/commit/1e0cb8fdba703c013812646930d0ff6ec60c55d3))
+
+* Create SECURITY.md ([`b480e06`](https://github.com/harishsiravuri/kgforge/commit/b480e062a4a4966cca39593e49e8006391ceccf7))
+
+* Create CODE_OF_CONDUCT.md ([`199a6e8`](https://github.com/harishsiravuri/kgforge/commit/199a6e88705094a37514b44bbcd1e8ed513e0b02))
+
+* final readme update for now ([`b03d26e`](https://github.com/harishsiravuri/kgforge/commit/b03d26e8ac430dd6c0e725d6bc727cd2e8f0e4ed))
+
+* doc:readme ([`a6e445f`](https://github.com/harishsiravuri/kgforge/commit/a6e445f908ed67e2aaf971600024c774ff1b47be))
+
+* docs ([`7a299cb`](https://github.com/harishsiravuri/kgforge/commit/7a299cb9321ca11afd96df93deed6f88f0b3cf96))
+
+* Merge branch &#39;main&#39; of github.com:harishsiravuri/kgforge ([`56f5ac0`](https://github.com/harishsiravuri/kgforge/commit/56f5ac0cd264bac4a3d9a748a7d369ea867d150f))
+
+* docs:badges ([`5ccdc8f`](https://github.com/harishsiravuri/kgforge/commit/5ccdc8fb2d541181c440acbf7e47640341f33d9c))
+
+
 ## v0.2.8 (2023-10-17)
 
 ### Fix
