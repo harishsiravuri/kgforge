@@ -24,7 +24,11 @@ jobs:
         python-version: 3.11
 
     - name: Install Python Poetry
-      uses: abatilo/actions-poetry@v2.3.0
+    - uses: snok/install-poetry@v1
+      with:
+        version: 1.6.1
+        virtualenvs-create: true
+        virtualenvs-in-project: true
 
     - name: Configure poetry
       shell: bash
