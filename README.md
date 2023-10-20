@@ -28,6 +28,9 @@
   <a href="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" target="_blank">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="Contribute">
   </a>
+  <a href="https://pepy.tech/project/kgforge" target="_blank">
+    <img src="https://static.pepy.tech/badge/kgforge" alt="Total Downloads">
+  </a>
 
 </p>
 
