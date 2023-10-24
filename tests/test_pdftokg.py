@@ -1,6 +1,6 @@
 from kgforge import PdfToKg
-from kgforge.utils import TextLoader
 from kgforge.documents import Document
+from kgforge.utils import TextLoader
 
 
 def test_answer_question() -> None:
