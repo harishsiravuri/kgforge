@@ -18,7 +18,7 @@ class PdfToKg:
         """Answers questions based on context.
 
         Usage example:
-        ans = PdfToKg().answer_question("text", "context")
+        >>>ans = PdfToKg().answer_question("text", "context")
 
         Args:
             question (str): Question to be answered.
