@@ -1,4 +1,5 @@
 from kgforge import PdfToKg
+from kgforge.utils import TextLoader
 
 
 def test_answer_question() -> None:
@@ -8,3 +9,10 @@ def test_answer_question() -> None:
     resp = sample_obj.answer_question(question=question, context=context)
     print(resp)
     assert True
+
+
+def test_read_pdf() -> None:
+    sample_obj = TextLoader()
+    path = "tests/test_data/example.pdf"
+    resp = sample_obj._read_pdf(path=path)
+    assert len(resp) > 0
