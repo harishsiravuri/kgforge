@@ -1,5 +1,6 @@
 from kgforge import PdfToKg
 from kgforge.utils import TextLoader
+from kgforge.documents import Document
 
 
 def test_answer_question() -> None:
@@ -16,3 +17,11 @@ def test_read_pdf() -> None:
     path = "tests/test_data/example.pdf"
     resp = sample_obj._read_pdf(path=path)
     assert len(resp) > 0
+
+
+def test_document() -> None:
+    sample_obj = Document()
+    sample_obj.full_text = "sample-text"
+    question = "text"
+    resp = sample_obj.answer_question(question=question)
+    assert len(resp) >= 0

@@ -1,12 +1,11 @@
-from typing import List
-
-from pdfminer.layout import LAParams
-from pdfminer.converter import TextConverter
-from pdfminer.pdfinterp import PDFPageInterpreter
-from pdfminer.pdfinterp import PDFResourceManager
-from pdfminer.pdfpage import PDFPage
 import io
 import logging
+from typing import List
+
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
+from pdfminer.pdfpage import PDFPage
 
 logger = logging.getLogger(__name__)
 
@@ -35,11 +34,15 @@ class TextLoader:
         try:
             resource_manager = PDFResourceManager()
             file_handle = io.StringIO()
-            converter = TextConverter(resource_manager, file_handle, laparams=LAParams())
+            converter = TextConverter(
+                resource_manager, file_handle, laparams=LAParams()
+            )
             page_interpreter = PDFPageInterpreter(resource_manager, converter)
 
             with open(path, "rb") as file:
-                for page in PDFPage.get_pages(file, caching=True, check_extractable=True):
+                for page in PDFPage.get_pages(
+                    file, caching=True, check_extractable=True
+                ):
                     page_interpreter.process_page(page)
                 text = file_handle.getvalue()
 
@@ -58,5 +61,5 @@ class TextLoader:
             logger.error("File not found.")
             raise FileNotFoundError
         except Exception as e:
-            logger.error("Error occurred while reading PDF.")
+            logger.error("Error occurred while reading PDF. " + str(e))
             raise e
