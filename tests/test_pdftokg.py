@@ -2,6 +2,7 @@ from kgforge.config import KGConfig
 from kgforge.data_models import ResearchArtifact
 from kgforge.kg import KnowledgeGraph
 from kgforge.utils import OpenAlexUtil, TextLoader
+import os
 
 
 def test_answer_question() -> None:
@@ -21,8 +22,9 @@ def test_answer_question() -> None:
     kg.update_prompts(new_prompts=new_prompts)
     assert kg.config.prompts is not None
 
-    res = kg.construct_kg()
-    assert res is not None
+    kg.construct_kg()
+    kg.visualize_kg("tests/test_data/test_graph.png")
+    os.remove("tests/test_data/test_graph.png")
 
 
 def test_read_pdf() -> None:

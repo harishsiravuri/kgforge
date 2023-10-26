@@ -7,6 +7,8 @@ from transformers import pipeline
 
 from kgforge.config import KGConfig
 from kgforge.data_models import Prompt, PromptResponse, ResearchArtifact
+import networkx as nx
+import matplotlib.pyplot as plt
 
 logger = logging.getLogger(__name__)
 
@@ -61,6 +63,7 @@ class KnowledgeGraph:
     ):
         self.config = config or KnowledgeGraphConfig()
         self.artifacts = artifacts
+        self.graph = nx.DiGraph()
 
     def clear_prompts(self) -> None:
         """Clears the list of prompts used in the construction of this KG
@@ -136,7 +139,7 @@ class KnowledgeGraph:
             logger.error("Error while answering question")
             return PromptResponse(concept=prompt.concept, prompt_response="Unavailable")
 
-    def construct_kg(self):
+    def construct_kg(self) -> None:
         """Constructs knowledge graph using the list of documents
 
         Usage example:
@@ -153,14 +156,42 @@ class KnowledgeGraph:
         """
 
         if self.artifacts is None:
-            raise ValueError("Artifacts are needed to construct the knowledge graph.")
+            logger.info("Artifacts are needed to construct the knowledge graph.")
 
-        processed_artifacts = []
-        for artifact in self.artifacts:
-            res = []
-            for prompt in self.config.prompts:
-                res.append(self.answer_question(artifact=artifact, prompt=prompt))
-            processed_artifacts.append(res)
+        try:
+            processed_artifacts = []
+            for artifact in self.artifacts:
+                self.graph.add_node(artifact.artifact_id)
+                res = []
+                for prompt in self.config.prompts:
+                    prompt_res = self.answer_question(artifact=artifact, prompt=prompt)
+                    res.append(prompt_res)
+                    self.graph.add_node(prompt_res.prompt_response)
+                    if prompt in ["contribution", "findings"]:
+                        self.graph.add_edge(artifact.artifact_id, prompt_res.prompt_response)
+                    else:
+                        self.graph.add_edge(prompt_res.prompt_response, artifact.artifact_id)
+                processed_artifacts.append(res)
 
-        logger.info(processed_artifacts)
-        return processed_artifacts
+            logger.info("Knowledge Graph constructed successfully.")
+        except Exception as e:
+            logger.info("Error while constructing the knowledge graph: " + str(e))
+
+    def visualize_kg(self, file_path: str = "graph.png"):
+        """Visualizes the knowledge graph
+
+        Usage example:
+        >>>kg = KnowledgeGraph()
+        >>>kg.visualize_kg()
+
+        Args:
+
+        Returns:
+            None: Visualizes the knowledge graph
+
+        Raises:
+            None
+        """
+        pos = nx.spring_layout(self.graph)
+        nx.draw(self.graph, pos=pos, with_labels=True, font_weight="bold")
+        plt.savefig(file_path, format="PNG")

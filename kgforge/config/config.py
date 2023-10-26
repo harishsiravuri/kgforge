@@ -6,8 +6,11 @@ from kgforge.data_models import Prompt
 class KGConfig:
     """A configuration object."""
 
+    DEFAULT_CONCEPTS: List[str] = ["contribution", "methods", "datasets", "findings"]
+
     DEFAULT_PROMPTS: List[Prompt] = [
-        Prompt(concept="author", question="Who is the author of this text?"),
-        Prompt(concept="title", question="What is the title of this text?"),
-        Prompt(concept="year", question="What year was this text published?"),
+        Prompt(concept="contribution", question="What is the main contribution of this paper?"),
+        Prompt(concept="methods", question="What methods were used?"),
+        Prompt(concept="datasets", question="What datasets were used?"),
+        Prompt(concept="findings", question="What are the key findings?"),
     ]
