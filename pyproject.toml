@@ -11,6 +11,9 @@ python = "^3.10"
 torch = ">=2.0.0, !=2.0.1, !=2.1.0"
 transformers = "^4.34.0"
 pytest = "^7.4.2"
+pypdf2 = "^3.0.1"
+pdfminer = "^20191125"
+matplotlib = "^3.8.0"
 
 [tool.semantic_release]
 version_toml = [
