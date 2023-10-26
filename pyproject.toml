@@ -14,6 +14,7 @@ pytest = "^7.4.2"
 pypdf2 = "^3.0.1"
 pdfminer = "^20191125"
 matplotlib = "^3.8.0"
+pydantic = "^2.4.2"
 
 [tool.semantic_release]
 version_toml = [
