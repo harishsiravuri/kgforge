@@ -2,6 +2,33 @@
 
 
 
+## v0.2.10 (2023-10-26)
+
+### Fix
+
+* fix: pydantic ([`50375a1`](https://github.com/harishsiravuri/kgforge/commit/50375a161216565726361d4d7416e461cc137f6d))
+
+### Unknown
+
+* Merge pull request #13 from harishsiravuri/7-pdf-to-knowledge-graph
+
+7 pdf to knowledge graph ([`4667313`](https://github.com/harishsiravuri/kgforge/commit/466731316346c11ea7db9c871c6c18b7b8d81e3b))
+
+* BREAKING CHANGE: sample classes removed, data models updated, graph construction added, tests updated ([`58e74f1`](https://github.com/harishsiravuri/kgforge/commit/58e74f11f2bc0811e5b6e751cf4687678d9eae18))
+
+* added openalex pulls ([`2e2311d`](https://github.com/harishsiravuri/kgforge/commit/2e2311db0b637dbd73c1bebbe9181e0d46a4e3b7))
+
+* added prompts ([`3d61a85`](https://github.com/harishsiravuri/kgforge/commit/3d61a851b91f436bb2827c060ea7c0b87c4e1b6c))
+
+* minor changes ([`f089c0c`](https://github.com/harishsiravuri/kgforge/commit/f089c0c63bc88e8188e2f86674fd720bee008972))
+
+* Added basic question answering ([`5ef60d1`](https://github.com/harishsiravuri/kgforge/commit/5ef60d1724cb6d8a6aa33a95b6b6626d43d8c34c))
+
+* Added pdf reader ([`75d16d6`](https://github.com/harishsiravuri/kgforge/commit/75d16d6477f026aa96397d25265fd4ea16f27d7e))
+
+* Update README.md ([`ff33ab6`](https://github.com/harishsiravuri/kgforge/commit/ff33ab6dbec4fa45a3cef9a18c5a9a820823026c))
+
+
 ## v0.2.9 (2023-10-20)
 
 ### Fix
