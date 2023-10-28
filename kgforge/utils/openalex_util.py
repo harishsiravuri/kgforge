@@ -19,7 +19,7 @@ class OpenAlexUtilConfig:
     def __init__(
         self,
         work_endpoint: str = "https://api.openalex.org/works/{}",
-        search_endpoint: str = "https://api.openalex.org/works?search={}",
+        search_endpoint: str = "https://api.openalex.org/works?search={}&filter=open_access.is_oa:true&per-page={}",
         filter_endpoint: str = "https://api.openalex.org/works?filter=",
     ) -> None:
         """Initializes KnowledgeGraphConfig
@@ -46,15 +46,16 @@ class OpenAlexUtil:
     def __init__(self, config: OpenAlexUtilConfig = OpenAlexUtilConfig()) -> None:
         self.config = config or OpenAlexUtilConfig()
 
-    def search_works(self, search_query: str) -> List[Any]:
+    def search_works(self, search_query: str, results_limit: int = 25) -> List[Any]:
         """Searches for artifacts using a query.
 
         Usage example:
         >>>oa_util = OpenAlexUtil()
-        >>>oa_util.search_works("sample-query")
+        >>>oa_util.search_works("sample-query", 25)
 
         Args:
             search_query (str): Query to search for artifacts.
+            results_limit (int): Number of results to return.
 
         Returns:
             List[ResearchArtifact]: List of artifacts that match the query.
@@ -63,7 +64,7 @@ class OpenAlexUtil:
             HTTPError: If an HTTP error occurs while searching for artifacts.
             Exception: If an error occurs while searching for artifacts.
         """
-        url = self.config.search_endpoint.format(search_query)
+        url = self.config.search_endpoint.format(search_query, results_limit)
 
         try:
             response = requests.get(url)

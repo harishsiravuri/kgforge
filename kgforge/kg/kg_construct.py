@@ -2,13 +2,13 @@ import logging
 import os
 from typing import List
 
+import matplotlib.pyplot as plt
+import networkx as nx
 import transformers
 from transformers import pipeline
 
 from kgforge.config import KGConfig
 from kgforge.data_models import Prompt, PromptResponse, ResearchArtifact
-import networkx as nx
-import matplotlib.pyplot as plt
 
 logger = logging.getLogger(__name__)
 
@@ -168,9 +168,13 @@ class KnowledgeGraph:
                     res.append(prompt_res)
                     self.graph.add_node(prompt_res.prompt_response)
                     if prompt in ["contribution", "findings"]:
-                        self.graph.add_edge(artifact.artifact_id, prompt_res.prompt_response)
+                        self.graph.add_edge(
+                            artifact.artifact_id, prompt_res.prompt_response
+                        )
                     else:
-                        self.graph.add_edge(prompt_res.prompt_response, artifact.artifact_id)
+                        self.graph.add_edge(
+                            prompt_res.prompt_response, artifact.artifact_id
+                        )
                 processed_artifacts.append(res)
 
             logger.info("Knowledge Graph constructed successfully.")

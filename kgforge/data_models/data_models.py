@@ -167,26 +167,49 @@ class ResearchArtifact(BaseModel):
     full_text: Optional[str] = None
     extracted_concepts: Optional[List[PromptResponse]] = None
 
+    def _get_pdf_url(self) -> str | None:
+        """Returns the PDF URL of the artifact.
+
+        Usage example:
+        >>>artifact = ResearchArtifact()
+        >>>artifact._get_pdf_url()
+
+        Args:
+
+        Returns:
+            str: PDF URL of the artifact.
+
+        Raises:
+            None
+        """
+        if self.open_access.is_oa:
+            if self.best_oa_location.pdf_url is None:
+                return self.open_access.oa_url
+            else:
+                return self.best_oa_location.pdf_url
+        else:
+            return None
+
     def referenced_works_ids(self):
         return [_.split("/")[-1] for _ in self.referenced_works]
 
     def get_full_text(self):
         if self.full_text is not None:
             logger.info("Full text already available.")
-        elif self.has_fulltext:
+        else:
             try:
-                text_loader = TextLoader()
-                full_text_pull = text_loader.read_pdf_from_url(
-                    self.best_oa_location.pdf_url
-                )
-                if full_text_pull is not None:
-                    self.full_text = "\n".join(
-                        text_loader.read_pdf_from_url(self.best_oa_location.pdf_url)
-                    )
+                url = self._get_pdf_url()
+                if url is not None:
+                    text_loader = TextLoader()
+                    full_text_pull = text_loader.read_pdf_from_url(url=url)
+                    if full_text_pull is not None:
+                        self.full_text = "\n".join(
+                            text_loader.read_pdf_from_url(self.best_oa_location.pdf_url)
+                        )
+                else:
+                    logger.info("PDF URL not found.")
             except Exception as e:
                 logger.info("Error while pulling full text. " + str(e))
-        else:
-            logger.info("Full text not available.")
 
 
 class CitationEdge(BaseModel):
