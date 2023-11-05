@@ -125,19 +125,29 @@ class KnowledgeGraph:
         """
         if artifact is None:
             logger.info("Artifact is needed to answer the question.")
-            return PromptResponse(concept=prompt.concept, score=0, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
         if artifact.full_text is None:
             logger.info("Full text not found.")
-            return PromptResponse(concept=prompt.concept, score=0, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
         if prompt.question == "":
             raise ValueError("Question cannot be empty")
         try:
             nlp = pipeline(task="question-answering", model=self.config.model_name)
             res = nlp(question=prompt.question, context=artifact.full_text)
-            return PromptResponse(concept=prompt.concept, score=res.get("score", 0), prompt_response=res.get("answer", "Unavailable"))
+            return PromptResponse(
+                concept=prompt.concept,
+                score=res.get("score", 0),
+                prompt_response=res.get("answer", "Unavailable"),
+            )
         except transformers.pipelines.base.PipelineException:
             logger.error("Error while answering question")
-            return PromptResponse(concept=prompt.concept, score=0, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
 
     def construct_kg(self) -> None:
         """Constructs knowledge graph using the list of documents
