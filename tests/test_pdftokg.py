@@ -16,7 +16,7 @@ def test_get_full_text() -> None:
 
 def test_answer_question() -> None:
     oa_util = OpenAlexUtil()
-    oa_resp = oa_util.search_works(search_query="machine+learning", results_limit=1)
+    oa_resp = oa_util.search_works(search_query="machine+learning", results_limit=10)
     artifacts = [ResearchArtifact.model_validate(_) for _ in oa_resp]
     [_.get_full_text() for _ in artifacts]
     assert len(artifacts) > 0
@@ -34,6 +34,18 @@ def test_answer_question() -> None:
     kg.construct_kg()
     kg.visualize_kg("tests/test_data/test_graph.png")
     os.remove("tests/test_data/test_graph.png")
+
+
+def test_kg() -> None:
+    oa_util = OpenAlexUtil()
+    oa_resp = oa_util.search_works(search_query="machine+learning", results_limit=10)
+    artifacts = [ResearchArtifact.model_validate(_) for _ in oa_resp]
+    [_.get_full_text() for _ in artifacts]
+    kg = KnowledgeGraph(artifacts=artifacts)
+    kg.construct_kg()
+    kg.visualize_kg("tests/test_data/test_graph.png")
+    os.remove("tests/test_data/test_graph.png")
+    assert True
 
 
 def test_read_pdf() -> None:
