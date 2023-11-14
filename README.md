@@ -80,3 +80,9 @@ It's time to point you to the official [Documentation Website](https://harishsir
 
 ## Contributing
 If you'd like to contribute, be sure to check out our [contributing guide](./CONTRIBUTING.md)! If you'd like to work on any outstanding items, check out the `roadmap` section in the docs and get started :smiley:
+
+Thanks goes to these incredible people.
+
+<a href="https://github.com/harishsiravuri/kgforge/graphs/contributors">
+  <img style="border-radius: 50%" src="https://contrib.rocks/image?repo=harishsiravuri/kgforge" />
+</a>

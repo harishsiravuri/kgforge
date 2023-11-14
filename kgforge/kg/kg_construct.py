@@ -1,3 +1,4 @@
+import errno
 import logging
 import os
 from typing import List
@@ -6,6 +7,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import transformers
 from transformers import pipeline
+import pickle
 
 from kgforge.config import KGConfig
 from kgforge.data_models import Prompt, PromptResponse, ResearchArtifact
@@ -191,6 +193,54 @@ class KnowledgeGraph:
         except Exception as e:
             logger.info("Error while constructing the knowledge graph: " + str(e))
 
+    def read_graph(self, path: str) -> None:
+        """Reads the graph from a file
+
+        Usage example:
+        >>>kg = KnowledgeGraph()
+        >>>kg.read_graph("kg.pickle")
+
+        Args:
+            path (str): Path to the file where the graph is to be read from
+
+        Returns:
+            None: Reads the graph from a file
+
+        Raises:
+            ValueError: If the path is empty
+            FileNotFoundError: If the file is not found
+        """
+        if path is None:
+            raise ValueError("Path cannot be empty")
+        else:
+            if not os.path.isfile(path):
+                raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+            else:
+                with open(path, "rb") as f:
+                    self.graph = pickle.load(f)
+
+    def write_graph(self, path: str) -> None:
+        """Writes the graph to a file
+
+        Usage example:
+        >>>kg = KnowledgeGraph()
+        >>>kg.write_graph("kg.pickle")
+
+        Args:
+            path (str): Path to the file where the graph is to be written
+
+        Returns:
+            None: Writes the graph to a file
+
+        Raises:
+            ValueError: If the path is empty
+        """
+        if path is not None and self.graph is not None:
+            with open(path, "wb") as f:
+                pickle.dump(self.graph, f)
+        else:
+            raise ValueError("Path cannot be empty")
+
     def visualize_kg(self, file_path: str = "graph.png"):
         """Visualizes the knowledge graph
 
@@ -206,6 +256,10 @@ class KnowledgeGraph:
         Raises:
             None
         """
-        pos = nx.spring_layout(self.graph)
-        nx.draw(self.graph, pos=pos, with_labels=True, font_weight="bold")
+        pos = nx.spring_layout(self.graph, k=0.7, iterations=50)
+        nx.draw(self.graph, pos=pos, with_labels=False, font_weight="bold")
+        ax = plt.gca()
+        ax.set_aspect('equal')
+        ax.set_axis_off()
+
         plt.savefig(file_path, format="PNG")
