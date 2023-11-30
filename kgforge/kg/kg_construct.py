@@ -8,6 +8,7 @@ import networkx as nx
 import transformers
 from transformers import pipeline
 import pickle
+import json
 
 from kgforge.config import KGConfig
 from kgforge.data_models import Prompt, PromptResponse, ResearchArtifact
@@ -235,11 +236,26 @@ class KnowledgeGraph:
         Raises:
             ValueError: If the path is empty
         """
-        if path is not None and self.graph is not None:
-            with open(path, "wb") as f:
-                pickle.dump(self.graph, f)
-        else:
-            raise ValueError("Path cannot be empty")
+        try:
+            node_arr = []
+            edge_arr = []
+
+            for node in list(self.graph.nodes(data=True)):
+                node_arr.append(node)
+
+            for edge in list(self.graph.edges()):
+                edge_arr.append(edge)
+
+            graph_dict = {"nodes": node_arr, "edges": edge_arr}
+            with open(path, "w") as f:
+                json.dump(graph_dict, f, indent=4)
+        except:
+            pass
+        # if path is not None and self.graph is not None:
+        #     with open(path, "wb") as f:
+        #         pickle.dump(self.graph, f)
+        # else:
+        #     raise ValueError("Path cannot be empty")
 
     def visualize_kg(self, file_path: str = "graph.png"):
         """Visualizes the knowledge graph

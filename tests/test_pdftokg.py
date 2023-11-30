@@ -38,14 +38,14 @@ def test_answer_question() -> None:
 
 def test_kg() -> None:
     oa_util = OpenAlexUtil()
-    oa_resp = oa_util.search_works(search_query="machine+learning", results_limit=50)
+    oa_resp = oa_util.search_works(search_query="machine+learning", results_limit=10)
     artifacts = [ResearchArtifact.model_validate(_) for _ in oa_resp]
     [_.get_full_text() for _ in artifacts]
     kg = KnowledgeGraph(artifacts=artifacts)
     kg.construct_kg()
     kg.write_graph("tests/test_data/test_graph.json")
     kg.visualize_kg("tests/test_data/test_graph.png")
-    os.remove("tests/test_data/test_graph.png")
+    # os.remove("tests/test_data/test_graph.png")
     assert True
 
 
