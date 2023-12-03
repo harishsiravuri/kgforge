@@ -1,3 +1,4 @@
+import errno
 import logging
 import os
 from typing import List
@@ -6,6 +7,8 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import transformers
 from transformers import pipeline
+import pickle
+import json
 
 from kgforge.config import KGConfig
 from kgforge.data_models import Prompt, PromptResponse, ResearchArtifact
@@ -125,19 +128,29 @@ class KnowledgeGraph:
         """
         if artifact is None:
             logger.info("Artifact is needed to answer the question.")
-            return PromptResponse(concept=prompt.concept, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
         if artifact.full_text is None:
             logger.info("Full text not found.")
-            return PromptResponse(concept=prompt.concept, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
         if prompt.question == "":
             raise ValueError("Question cannot be empty")
         try:
             nlp = pipeline(task="question-answering", model=self.config.model_name)
             res = nlp(question=prompt.question, context=artifact.full_text)
-            return PromptResponse(concept=prompt.concept, prompt_response=res)
+            return PromptResponse(
+                concept=prompt.concept,
+                score=res.get("score", 0),
+                prompt_response=res.get("answer", "Unavailable"),
+            )
         except transformers.pipelines.base.PipelineException:
             logger.error("Error while answering question")
-            return PromptResponse(concept=prompt.concept, prompt_response="Unavailable")
+            return PromptResponse(
+                concept=prompt.concept, score=0, prompt_response="Unavailable"
+            )
 
     def construct_kg(self) -> None:
         """Constructs knowledge graph using the list of documents
@@ -181,6 +194,69 @@ class KnowledgeGraph:
         except Exception as e:
             logger.info("Error while constructing the knowledge graph: " + str(e))
 
+    def read_graph(self, path: str) -> None:
+        """Reads the graph from a file
+
+        Usage example:
+        >>>kg = KnowledgeGraph()
+        >>>kg.read_graph("kg.pickle")
+
+        Args:
+            path (str): Path to the file where the graph is to be read from
+
+        Returns:
+            None: Reads the graph from a file
+
+        Raises:
+            ValueError: If the path is empty
+            FileNotFoundError: If the file is not found
+        """
+        if path is None:
+            raise ValueError("Path cannot be empty")
+        else:
+            if not os.path.isfile(path):
+                raise FileNotFoundError(errno.ENOENT, os.strerror(errno.ENOENT), path)
+            else:
+                with open(path, "rb") as f:
+                    self.graph = pickle.load(f)
+
+    def write_graph(self, path: str) -> None:
+        """Writes the graph to a file
+
+        Usage example:
+        >>>kg = KnowledgeGraph()
+        >>>kg.write_graph("kg.pickle")
+
+        Args:
+            path (str): Path to the file where the graph is to be written
+
+        Returns:
+            None: Writes the graph to a file
+
+        Raises:
+            ValueError: If the path is empty
+        """
+        try:
+            node_arr = []
+            edge_arr = []
+
+            for node in list(self.graph.nodes(data=True)):
+                node_arr.append(node)
+
+            for edge in list(self.graph.edges()):
+                edge_arr.append(edge)
+
+            graph_dict = {"nodes": node_arr, "edges": edge_arr}
+            with open(path, "w") as f:
+                json.dump(graph_dict, f, indent=4)
+        except:
+            pass
+        # if path is not None and self.graph is not None:
+        #     with open(path, "wb") as f:
+        #         pickle.dump(self.graph, f)
+        # else:
+        #     raise ValueError("Path cannot be empty")
+
     def visualize_kg(self, file_path: str = "graph.png"):
         """Visualizes the knowledge graph
 
@@ -196,6 +272,10 @@ class KnowledgeGraph:
         Raises:
             None
         """
-        pos = nx.spring_layout(self.graph)
-        nx.draw(self.graph, pos=pos, with_labels=True, font_weight="bold")
+        pos = nx.spring_layout(self.graph, k=0.7, iterations=50)
+        nx.draw(self.graph, pos=pos, with_labels=False, font_weight="bold")
+        ax = plt.gca()
+        ax.set_aspect('equal')
+        ax.set_axis_off()
+
         plt.savefig(file_path, format="PNG")

@@ -30,6 +30,7 @@ class PromptResponse(BaseModel):
     """
 
     concept: str
+    score: float
     prompt_response: str
 
 

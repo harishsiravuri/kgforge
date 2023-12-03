@@ -1,0 +1,302 @@
+{
+    "nodes": [
+        [
+            "https://openalex.org/W2101234009",
+            {}
+        ],
+        [
+            "non-copyleft licenses",
+            {}
+        ],
+        [
+            "warm restarts or regularization paths",
+            {}
+        ],
+        [
+            "Madelon data set",
+            {}
+        ],
+        [
+            "Does not converge within 1 hour",
+            {}
+        ],
+        [
+            "https://openalex.org/W2118020653",
+            {}
+        ],
+        [
+            "suggestions and constructive criticism",
+            {}
+        ],
+        [
+            "Anova test and the Friedman\ntest",
+            {}
+        ],
+        [
+            "hun-\ndreds of thousands of documents",
+            {}
+        ],
+        [
+            "\u2014to relax the constraint that document vectors should be binary-valued",
+            {}
+        ],
+        [
+            "https://openalex.org/W1570448133",
+            {}
+        ],
+        [
+            "Evaluating What's Been Learned",
+            {}
+        ],
+        [
+            "Basic Methods",
+            {}
+        ],
+        [
+            "Massive Data Sets",
+            {}
+        ],
+        [
+            "https://openalex.org/W2155653793",
+            {}
+        ],
+        [
+            "validation",
+            {}
+        ],
+        [
+            "trapezoidal integration",
+            {}
+        ],
+        [
+            "medical diagnostics",
+            {}
+        ],
+        [
+            "they do not form smooth exponential curves",
+            {}
+        ],
+        [
+            "https://openalex.org/W1534477342",
+            {}
+        ],
+        [
+            "general purpose",
+            {}
+        ],
+        [
+            "Bag",
+            {}
+        ],
+        [
+            "ensembles are often much more accurate",
+            {}
+        ],
+        [
+            "https://openalex.org/W2149684865",
+            {}
+        ],
+        [
+            "\n1\n9\n9\n5\n.\n ",
+            {}
+        ],
+        [
+            "\nk\n-\nN\nN\n",
+            {}
+        ],
+        [
+            "\nk\n-\nN\nN\n.\n ",
+            {}
+        ],
+        [
+            "https://openalex.org/W4211049957",
+            {}
+        ],
+        [
+            "it can be used to\nmake predictions for unseen test cases",
+            {}
+        ],
+        [
+            "parametric1 models",
+            {}
+        ],
+        [
+            "conclusions\nand a look at the current trends in GP work",
+            {}
+        ],
+        [
+            "https://openalex.org/W2040884411",
+            {}
+        ],
+        [
+            "Unavailable",
+            {}
+        ],
+        [
+            "https://openalex.org/W114517082",
+            {}
+        ],
+        [
+            "stochastic gradient algorithms",
+            {}
+        ],
+        [
+            "SGD, SGDQN, and ASGD",
+            {}
+        ],
+        [
+            "Large-Scale Machine Learning",
+            {}
+        ],
+        [
+            "Online learning",
+            {}
+        ],
+        [
+            "https://openalex.org/W3198350258",
+            {}
+        ],
+        [
+            "learning techniques",
+            {}
+        ],
+        [
+            "a standard but\nrudimentary tree-search",
+            {}
+        ],
+        [
+            "An effective rote-learning",
+            {}
+        ]
+    ],
+    "edges": [
+        [
+            "non-copyleft licenses",
+            "https://openalex.org/W2101234009"
+        ],
+        [
+            "warm restarts or regularization paths",
+            "https://openalex.org/W2101234009"
+        ],
+        [
+            "Madelon data set",
+            "https://openalex.org/W2101234009"
+        ],
+        [
+            "Does not converge within 1 hour",
+            "https://openalex.org/W2101234009"
+        ],
+        [
+            "suggestions and constructive criticism",
+            "https://openalex.org/W2118020653"
+        ],
+        [
+            "Anova test and the Friedman\ntest",
+            "https://openalex.org/W2118020653"
+        ],
+        [
+            "hun-\ndreds of thousands of documents",
+            "https://openalex.org/W2118020653"
+        ],
+        [
+            "\u2014to relax the constraint that document vectors should be binary-valued",
+            "https://openalex.org/W2118020653"
+        ],
+        [
+            "Evaluating What's Been Learned",
+            "https://openalex.org/W1570448133"
+        ],
+        [
+            "Basic Methods",
+            "https://openalex.org/W1570448133"
+        ],
+        [
+            "Massive Data Sets",
+            "https://openalex.org/W1570448133"
+        ],
+        [
+            "validation",
+            "https://openalex.org/W2155653793"
+        ],
+        [
+            "trapezoidal integration",
+            "https://openalex.org/W2155653793"
+        ],
+        [
+            "medical diagnostics",
+            "https://openalex.org/W2155653793"
+        ],
+        [
+            "they do not form smooth exponential curves",
+            "https://openalex.org/W2155653793"
+        ],
+        [
+            "general purpose",
+            "https://openalex.org/W1534477342"
+        ],
+        [
+            "Bag",
+            "https://openalex.org/W1534477342"
+        ],
+        [
+            "ensembles are often much more accurate",
+            "https://openalex.org/W1534477342"
+        ],
+        [
+            "\n1\n9\n9\n5\n.\n ",
+            "https://openalex.org/W2149684865"
+        ],
+        [
+            "\nk\n-\nN\nN\n",
+            "https://openalex.org/W2149684865"
+        ],
+        [
+            "\nk\n-\nN\nN\n.\n ",
+            "https://openalex.org/W2149684865"
+        ],
+        [
+            "it can be used to\nmake predictions for unseen test cases",
+            "https://openalex.org/W4211049957"
+        ],
+        [
+            "parametric1 models",
+            "https://openalex.org/W4211049957"
+        ],
+        [
+            "conclusions\nand a look at the current trends in GP work",
+            "https://openalex.org/W4211049957"
+        ],
+        [
+            "Unavailable",
+            "https://openalex.org/W2040884411"
+        ],
+        [
+            "stochastic gradient algorithms",
+            "https://openalex.org/W114517082"
+        ],
+        [
+            "SGD, SGDQN, and ASGD",
+            "https://openalex.org/W114517082"
+        ],
+        [
+            "Large-Scale Machine Learning",
+            "https://openalex.org/W114517082"
+        ],
+        [
+            "Online learning",
+            "https://openalex.org/W114517082"
+        ],
+        [
+            "learning techniques",
+            "https://openalex.org/W3198350258"
+        ],
+        [
+            "a standard but\nrudimentary tree-search",
+            "https://openalex.org/W3198350258"
+        ],
+        [
+            "An effective rote-learning",
+            "https://openalex.org/W3198350258"
+        ]
+    ]
+}
