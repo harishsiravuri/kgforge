@@ -2,6 +2,39 @@
 
 
 
+## v0.2.11 (2023-12-04)
+
+### Fix
+
+* fix: release ([`7c3ba90`](https://github.com/harishsiravuri/kgforge/commit/7c3ba900ebf0a3787a0fd0e4ea0226af16c80a20))
+
+### Unknown
+
+* Merge pull request #16 from harishsiravuri/14-update-knowledge-graph
+
+fix: release ([`72cd4ae`](https://github.com/harishsiravuri/kgforge/commit/72cd4ae81cb7fd7ed639c029f61b92d5760e02a1))
+
+* Merge branch &#39;main&#39; into 14-update-knowledge-graph ([`6c82065`](https://github.com/harishsiravuri/kgforge/commit/6c820659b37ea04a7826bd8dd55a9a02047f202d))
+
+* Merge pull request #15 from harishsiravuri/14-update-knowledge-graph
+
+14 update knowledge graph ([`2cdb4ab`](https://github.com/harishsiravuri/kgforge/commit/2cdb4abf22f989900dadb66caa2031396415cf5b))
+
+* wip ([`f89a569`](https://github.com/harishsiravuri/kgforge/commit/f89a569fa246fed09a82cced242d2c9ec4a8d1d5))
+
+* added tests for generating single graphs ([`74f4906`](https://github.com/harishsiravuri/kgforge/commit/74f49060ea29c91380fa36b63ffdccc8f443448f))
+
+* doc ([`89ddd1c`](https://github.com/harishsiravuri/kgforge/commit/89ddd1c89c61d4c251c3eebd94efe0f3c63de259))
+
+* lints ([`45c8cf7`](https://github.com/harishsiravuri/kgforge/commit/45c8cf7ec9d14bffb89e6041bfd36f3133972206))
+
+* Updated prompt responses to add scores ([`4263d23`](https://github.com/harishsiravuri/kgforge/commit/4263d232cfec032161a0f5f47b1fff01262491de))
+
+* Merge branch &#39;main&#39; of https://github.com/harishsiravuri/kgforge ([`04883a8`](https://github.com/harishsiravuri/kgforge/commit/04883a8342976950d2e77dcd2f575f3b515755e5))
+
+* fixed artifact search, updadted tests ([`f9e0435`](https://github.com/harishsiravuri/kgforge/commit/f9e04353e700403e10587f86588e35008b242906))
+
+
 ## v0.2.10 (2023-10-26)
 
 ### Fix
